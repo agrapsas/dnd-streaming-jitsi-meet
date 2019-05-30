@@ -96,8 +96,8 @@ form {
     display: block;
     position: absolute;
     top: 15;
-    width: $watermarkWidth;
-    height: $watermarkHeight;
+    width: 0;
+    height: 0;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: $zindex2;

@@ -41,6 +41,9 @@
     position: relative;
     text-align: center;
     height: 370px !important;
+    max-height: 370px !important;
+    min-height: 370px !important;
+    max-width: 660px !important;
     overflow: hidden;
 
     &__background {
