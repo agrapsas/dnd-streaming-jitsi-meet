@@ -37,6 +37,32 @@ window.APP = {
     UI
 };
 
+const VIDEOS = ".videocontainer";
+
+window._globals = {
+    scale: 1,
+    height: 455
+};
+
+window.videos = {
+    newHeight(heightPx) {
+        window._globals.height = heightPx;
+        $(VIDEOS).css({ "height": "455px !important" });
+    },
+    newScale(scale) {
+        window._globals.scale = scale;
+        $(VIDEOS).css({ "transform": `scale(${scale}, ${scale})` });
+    }
+};
+
+window.fixVideos = function(px) {
+    $(".videocontainer").css({'min-width' : `${px}px`, 'width' : `${px}px`, 'max-width' : `${px}px` });
+};
+
+window.fixFlow = function() {
+
+};
+
 // TODO The execution of the mobile app starts from react/index.native.js.
 // Similarly, the execution of the Web app should start from react/index.web.js
 // for the sake of consistency and ease of understanding. Temporarily though

@@ -72,13 +72,13 @@
      * and allowing the thumbnails to wrap.
      */
     #filmstripRemoteVideosContainer {
-        align-content: center;
+        align-content: flex-start;
         align-items: center;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
         height: 100vh;
-        justify-content: center;
+        justify-content: left;
         padding: 100px 0;
 
         .videocontainer {

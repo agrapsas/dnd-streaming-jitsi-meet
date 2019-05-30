@@ -610,7 +610,7 @@ RemoteVideo.createContainer = function(spanId) {
     const localVideoContainer
         = document.getElementById('localVideoTileViewContainer');
 
-    remoteVideosContainer.insertBefore(container, localVideoContainer);
+    remoteVideosContainer.appendChild(container);
 
     return container;
 };

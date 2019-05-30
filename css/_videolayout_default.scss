@@ -40,6 +40,8 @@
 .videocontainer {
     position: relative;
     text-align: center;
+    height: 370px !important;
+    overflow: hidden;
 
     &__background {
         @include topLeft();
