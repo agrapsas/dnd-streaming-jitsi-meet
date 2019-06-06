@@ -330,6 +330,9 @@ const Filmstrip = {
     resizeThumbnails(local, remote, forceUpdate = false) {
         const state = APP.store.getState();
 
+        const fixedWidth = 544;
+        const fixedHeight = 305;
+
         if (shouldDisplayTileView(state)) {
             // The size of the side margins for each tile as set in CSS.
             const sideMargins = 10 * 2;
@@ -342,7 +345,7 @@ const Filmstrip = {
             // Width is set so that the flex layout can automatically wrap
             // tiles onto new rows.
             this.filmstripRemoteVideos.css({
-                width: (local.thumbWidth * columns) + (columns * sideMargins)
+                width: (fixedWidth * columns) + (columns * sideMargins)
             });
 
             this.filmstripRemoteVideos.toggleClass('has-overflow', hasOverflow);
@@ -356,13 +359,13 @@ const Filmstrip = {
             // eslint-disable-next-line no-shadow
             thumbs.localThumb.css({
                 display: 'inline-block',
-                height: `${local.thumbHeight}px`,
-                'min-height': `${local.thumbHeight}px`,
-                'min-width': `${local.thumbWidth}px`,
-                width: `${local.thumbWidth}px`
+                height: `${fixedHeight}px`,
+                'min-height': `${fixedHeight}px`,
+                'min-width': `${fixedWidth}px`,
+                width: `${fixedWidth}px`
             });
 
-            const avatarSize = local.thumbHeight / 2;
+            const avatarSize = fixedHeight / 2;
 
             thumbs.localThumb.find('.avatar-container')
                 .height(avatarSize)
@@ -372,13 +375,13 @@ const Filmstrip = {
         if (thumbs.remoteThumbs) {
             thumbs.remoteThumbs.css({
                 display: 'inline-block',
-                height: `${remote.thumbHeight}px`,
-                'min-height': `${remote.thumbHeight}px`,
-                'min-width': `${remote.thumbWidth}px`,
-                width: `${remote.thumbWidth}px`
+                height: `${fixedHeight}px`,
+                'min-height': `${fixedHeight}px`,
+                'min-width': `${fixedWidth}px`,
+                width: `${fixedWidth}px`
             });
 
-            const avatarSize = remote.thumbHeight / 2;
+            const avatarSize = fixedHeight / 2;
 
             thumbs.remoteThumbs.find('.avatar-container')
                 .height(avatarSize)
